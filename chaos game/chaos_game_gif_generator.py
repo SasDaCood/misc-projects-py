@@ -42,7 +42,7 @@ Step to increase ratio by, in percentage (cannot be negative).
 Input here: """).split()
 
 	if len(input_string) != INPUT_SIZE:
-		print("Sorry, but your choice string was either too long or too short (like ur dicc). Please try again.")
+		print("Sorry, but your choice string was either too long or too short. Please try again.")
 		continue
 
 	try:

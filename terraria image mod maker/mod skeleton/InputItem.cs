@@ -8,7 +8,7 @@ namespace h
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("h");
-			Tooltip.SetDefault("gay");
+			Tooltip.SetDefault("aye");
 		}
 
 		public override void SetDefaults() {

@@ -1,4 +1,4 @@
-from PIL import Image as nigga
+from PIL import Image
 from time import sleep
 from decimal import Decimal,getcontext
 
@@ -6,11 +6,11 @@ from decimal import Decimal,getcontext
 missing_file_responses = (
 	"Woops haha, you must've accidentally replaced the ali.jpg file that came with the program!\nI'm a nice guy, so I'll wait while you go fix that up.\nPress enter the continue, my friend! After all, this is your (belated) birthday gift.",
 	"Haha... you must've forgotten, dear friend!\nI told you to go and find me a new ali.jpg file.\nCome now, we don't have all day! :)",
-	"Friend, mistakes happen, but my patience wears thin...\nWould you please, for the sake of the left mole 0n my dick,\nget me th3 k0rrecT aaLI.jePg",
-	"b1tcH 1 wI11 Rip 0UT yoUr 3ntr@il5   co0K 1hEM W1tH mY 501d3r1NG [Fe]   @nd f3ed tH3m t0 tHE <3-cr@ft1an h0rR0r KnoWN A5 "
+	"Friend, mistakes happen, but my patience wears thin...\nWould you please, for your own sake,\nget me th3 k0rrecT aaLI.jePg",
+	"1 wI11 Rip 0UT yoUr 3ntr@il5   co0K 1hEM W1tH mY 501d3r1NG 1R0n   @nd f3ed tH3m t0 tHE <3-cr@ft1an h0rR0r KnoWN A5 "
 )
 
-glitch_text = ("Saswata", "SASWATA", "5ASWaTA", "Sa5wa1A", "5A5wAt0", "S@5WT/\\", "SAIFULA", "5@53@1@", "DQXdbV6", "QdGHt1x", "n7f1oLv", "hCefLWh", "KOZy0xf", "1wtk3Gj", "[REDACTED]")
+glitch_text = ("Sas", "SAS", "5AS", "Sa5", "5A5", "S/5", "5@S", "5@5", "DQX", "QdG", "n7f", "hCe", "KOZ", "1wt", "[REDACTED]")
 
 WIDTH,HEIGHT = 107,17
 FOO = 17
@@ -27,7 +27,7 @@ print("Happy birthday, dear friend! Welcome to the Everything Equation!\nPress e
 for looped in range(5):
 	try:
 		input()
-		og_img = nigga.open("ali.jpg").convert("1")
+		og_img = Image.open("ali.jpg").convert("1")
 		if og_img.size != (WIDTH,HEIGHT): raise FileNotFoundError
 		break
 	except FileNotFoundError:
@@ -39,7 +39,7 @@ for looped in range(5):
 			for text in glitch_text:		# this whole loop should take just around 6 seconds
 				print(text, end="", flush=True)
 				sleep(delay)
-				print("\b\b\b\b\b\b\b", end="", flush=True)
+				print("\b\b\b", end="", flush=True)
 				delay /= 1.3
 
 			sleep(1)
@@ -74,8 +74,8 @@ k = int("".join(map(str, bin_list)), 2) * 17
 print(f"k is... {k}.\n\nHuge number, innit?")
 
 
-img = nigga.new("1", (WIDTH+10,HEIGHT+10), 255)		# graph is from (k+17)+5 to k-5 on the y axis, -5 to (WIDTH+5)-1 on the x axis 
-print("Graphing the nigga...")
+img = Image.new("1", (WIDTH+10,HEIGHT+10), 255)		# graph is from (k+17)+5 to k-5 on the y axis, -5 to (WIDTH+5)-1 on the x axis 
+print("Graphing the thingo...")
 
 x = 0
 for graph_x in range(WIDTH+4, -6, -1):

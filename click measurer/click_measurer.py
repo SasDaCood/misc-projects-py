@@ -10,7 +10,7 @@ from time import time,sleep
 #from winsound import PlaySound,SND_ASYNC
 
 def initialiseLoopRedirect(): initialiseLoop(0,0)
-def bye(x,y):
+def bye():
     turtle.bye()
     exit()
 
@@ -37,7 +37,7 @@ def highscores():
 
     text.color("black")
     text.goto(0,-250)
-    text.write("'None' means the slot is empty. Perhaps you could fill in the gap?\nClick anywhere to exit, or press R to retry your hand at getting a highscore!\nJust don't get repetitive strain injury :p",align="center",font=("Calibri",13,"bold"))
+    text.write("'None' means the slot is empty. Perhaps you could fill in the gap?\nPress Q to exit, or R to retry your hand at getting a highscore!\nJust don't get repetitive strain injury :p",align="center",font=("Calibri",13,"bold"))
 
 
 def exitLoop():
@@ -54,7 +54,7 @@ def exitLoop():
     try:
         for number in range(1,11):
             if clicksPerSecond > eval(config["DEFAULT"]["{}".format(number)])[0]:
-                name = turtle.textinput("HIGHSCORE!","Congratulations, you have achieved a highscore!\nPlease enter you name here - only 20 letters long, please, and no \ characters!!\n(And while you're at it,\ngive me your social security and credit card numbers as well!\nI'll make good use of them, I promise :^) )")
+                name = turtle.textinput("HIGHSCORE!","Congratulations, you have achieved a highscore!\nPlease enter you name here - only 20 letters long, please, and no \ characters!!\n(And while you're at it,give me your social security and credit card numbers as well!\nI'll make good use of them, I promise :^) )")
                 if name == None or len(name) > 20 or len(name) == 0 or name == "None" or "\\" in name:
                     text.goto(0,250)
                     text.color("red")
@@ -70,7 +70,7 @@ def exitLoop():
                 with open("highscores.ini","w") as configfile: config.write(configfile)
                 break
             
-    except TypeError or NameError:
+    except (TypeError, NameError):
         text.write("Sorry, but it seems you've changed the highscores file.\nThat will not be tolerated, and as such,\nthis program will close in 3 seconds.",align="center",font=("Calibri",15))
         sleep(1)
         text.clear()
@@ -83,8 +83,8 @@ def exitLoop():
         exit()
     
     text.goto(0,0)
-    text.write("{0} times clicked in total.\nYour click speed is approximately {1} clicks per second!\nClick anywhere to exit,\nor alternatively, press R to retry!\nLastly, you can press H to view them highscores!".format((counter),(clicksPerSecond)),align = "center",font=("Calibri",15,"bold"))
-    turtle.onscreenclick(bye)
+    text.write("{0} times clicked in total.\nYour click speed is approximately {1} clicks per second!\nPress Q to exit, or R to retry!\nLastly, you can press H to view them highscores!".format((counter),(clicksPerSecond)),align = "center",font=("Calibri",15,"bold"))
+    turtle.onkey(bye,"q")
     turtle.onkey(initialiseLoopRedirect,"r")
     turtle.onkey(highscores,"h")
 
@@ -94,7 +94,7 @@ def exitLoop():
 def counterAdd(x,y):
     global counter
     counter += 1
-    if playHitsound: PlaySound("hit.wav",SND_ASYNC)
+    #if playHitsound: PlaySound("hit.wav",SND_ASYNC)
     text.clear()
     text.write("{} times clicked".format(counter),align = "center",font=("Calibri",15))
     turtle.update()
@@ -113,7 +113,9 @@ def mainLoop():
     
     while round(time()-startTime,2) <= roundTime:
         timertext.clear()
-        timertext.write("{0} seconds left\n{1} clicks per second".format(round(endTime-time(),2),round(counter/(time()-startTime),5)),align="center",font=("Comic Sans MS",20))
+        time_left = round(endTime-time(),2)
+        cps = round(counter/(time()-startTime),5) if time()-startTime > 0 else 0
+        timertext.write(f"{time_left} seconds left\n{cps} clicks per second",align="center",font=("Comic Sans MS",20))
         
         button.onclick(counterAdd)
         button.onclick(counterAdd,3)

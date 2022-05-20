@@ -1,3 +1,0 @@
-displayName = h
-author = SasDaGreat (and u :flooshed:)
-version = 6.9

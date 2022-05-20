@@ -39,10 +39,10 @@ screen.setup(WIDTH,HEIGHT)
 screen.bgcolor("gray")
 screen.title("Diffusion visualizer")
 screen.addshape("bubble.gif")
+turtle.tracer(0,0)
 
 bubbleList = [Bubble() for x in range(BUBBLENUM)]
 
-turtle.tracer(0,0)
 sleep(1)
 startTime = time()
 
