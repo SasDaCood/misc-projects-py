@@ -26,7 +26,7 @@ Set of graphing programs that graphs successive iterations of z(n) = z(n-1)^k or
 
 
 ### times tables
-implementation of [Mathologer's times tables](https://www.youtube.com/watch?v=qhbuKbxJsk8).
+An implementation of [Mathologer's times tables](https://www.youtube.com/watch?v=qhbuKbxJsk8).
 
 **times_table_visualiser_colour :** standard, shows a nice animation as the table is built up. If that's too slow, just set TRACER_ACTIVE to False<br/>
 **times_table_visualiser gif creator :** makes gifs by cycling through different parameters, again. Pretty fond of these gif makers!<br/>
