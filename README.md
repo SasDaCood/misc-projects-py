@@ -41,7 +41,7 @@ Simulation of diffusion through random (Brownian?) motion.<br/>
 
 
 ### everything formula
-Implementation of [Tucker's "everything" formula](https://www.youtube.com/watch?v=_s5RFgd59ao), made as a birthday gift for a friend (so it only finds the k value for a pre-included image; anything with the same resolution should work too though, just replace ali.jpg).<br/>
+An implementation of [Tucker's "everything" formula](https://www.youtube.com/watch?v=_s5RFgd59ao), made as a birthday gift for a friend (so it only finds the k value for a pre-included image; anything with the same resolution should work too though, just replace ali.jpg).<br/>
 
 
 ### terraria image mod maker
