@@ -39,6 +39,10 @@ A Langton's ant-like program that [sometimes creates a fractal](https://www.redd
 **binary_turns_vPygame:** 2022 update with pygame, again! Now generates some other cool looking complex shapes too<br/>
 
 
+### centripetal
+(Attempts to) simulate centripetal force and circular motion. Radius of curvature seems to constantly increase, though... might be because of some inaccuracy.<br/>
+
+
 ### click measurer
 Measures CPS (allowing both mouse and z/x clicks). Also has a highscore system?<br/>
 
