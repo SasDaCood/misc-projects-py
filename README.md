@@ -1,5 +1,5 @@
 # misc-projects-py
-Just a collection of projects I made for fun in python. Most were made *back in 2018*, so the code ain't the prettiest!
+Just a collection of small scripts I made for fun in python. Most were made *back in 2018*, so the code ain't the prettiest!
 
 
 
